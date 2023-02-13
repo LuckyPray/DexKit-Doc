@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>Builder</title>
+    <link href="../../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../../styles/style.css" rel="Stylesheet">
+<link href="../../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../../styles/main.css" rel="Stylesheet">
+<link href="../../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../../index.html">
+                    <span>dexkit-android</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="dexkit-android::io.luckypray.dexkit.builder/MethodInvokingArgs.Builder///PointingToDeclaration//-360996621">
+  <div class="breadcrumbs"><a href="../../../../index.html">dexkit-android</a><span class="delimiter">/</span><a href="../../index.html">io.luckypray.dexkit.builder</a><span class="delimiter">/</span><a href="../index.html">MethodInvokingArgs</a><span class="delimiter">/</span><span class="current">Builder</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Builder</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">Builder</a> : <a href="../../-base-source-args/-builder/index.html">BaseSourceArgs.Builder</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">MethodInvokingArgs.Builder</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="../index.html">MethodInvokingArgs</a><span class="token operator">&gt; </span></div><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">1.1.0</p></span></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+    <div class="tabs-section-body">
+      <h2 class="tabbedcontent">Constructors</h2>
+      <div class="table" data-togglable="Constructors"><a data-name="1842468866%2FConstructors%2F-360996621" anchor-label="Builder" id="1842468866%2FConstructors%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue TabbedContent">
+            <div class=""><span class="inline-flex">
+                <div><a href="-builder.html"><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1842468866%2FConstructors%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="-builder.html"><span class="token function">Builder</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Functions</h2>
+      <div class="table" data-togglable="Functions"><a data-name="-1952204353%2FFunctions%2F-360996621" anchor-label="beInvokedMethodDeclareClass" id="-1952204353%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="be-invoked-method-declare-class.html"><span>be</span><wbr></wbr><span>Invoked</span><wbr></wbr><span>Method</span><wbr></wbr><span>Declare</span><wbr></wbr><span><span>Class</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1952204353%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="be-invoked-method-declare-class.html"><span class="token function">beInvokedMethodDeclareClass</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">beInvokedMethodDeclareClass<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="be-invoked-method-declare-class.html">Builder.beInvokedMethodDeclareClass</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="283881664%2FFunctions%2F-360996621" anchor-label="beInvokedMethodDescriptor" id="283881664%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="be-invoked-method-descriptor.html"><span>be</span><wbr></wbr><span>Invoked</span><wbr></wbr><span>Method</span><wbr></wbr><span><span>Descriptor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="283881664%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="be-invoked-method-descriptor.html"><span class="token function">beInvokedMethodDescriptor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">beInvokedMethodDescriptor<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="be-invoked-method-descriptor.html">Builder.beInvokedMethodDescriptor</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1844049316%2FFunctions%2F-360996621" anchor-label="beInvokedMethodName" id="-1844049316%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="be-invoked-method-name.html"><span>be</span><wbr></wbr><span>Invoked</span><wbr></wbr><span>Method</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1844049316%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="be-invoked-method-name.html"><span class="token function">beInvokedMethodName</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">beInvokedMethodName<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="be-invoked-method-name.html">Builder.beInvokedMethodName</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="852830930%2FFunctions%2F-360996621" anchor-label="beInvokedMethodParameterTypes" id="852830930%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="be-invoked-method-parameter-types.html"><span>be</span><wbr></wbr><span>Invoked</span><wbr></wbr><span>Method</span><wbr></wbr><span>Parameter</span><wbr></wbr><span><span>Types</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="852830930%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="be-invoked-method-parameter-types.html"><span class="token function">beInvokedMethodParameterTypes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">beInvokedMethodParameterTypes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="be-invoked-method-parameter-types.html">Builder.beInvokedMethodParameterTypes</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1596807579%2FFunctions%2F-360996621" anchor-label="beInvokedMethodReturnType" id="1596807579%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="be-invoked-method-return-type.html"><span>be</span><wbr></wbr><span>Invoked</span><wbr></wbr><span>Method</span><wbr></wbr><span>Return</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1596807579%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="be-invoked-method-return-type.html"><span class="token function">beInvokedMethodReturnType</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">beInvokedMethodReturnType<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="be-invoked-method-return-type.html">Builder.beInvokedMethodReturnType</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1765697425%2FFunctions%2F-360996621" anchor-label="build" id="-1765697425%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="build.html"><span><span>build</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1765697425%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="build.html"><span class="token function">build</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../index.html">MethodInvokingArgs</a></div><div class="brief "><p class="paragraph">build <a href="../index.html">MethodInvokingArgs</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-243752054%2FFunctions%2F-360996621" anchor-label="findPath" id="-243752054%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../-base-args/-builder/find-path.html"><span>find</span><wbr></wbr><span><span>Path</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-243752054%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-base-args/-builder/find-path.html"><span class="token function">findPath</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">findPath<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="../../-base-args/-builder/find-package.html">Builder.findPackage</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="998791734%2FFunctions%2F-360996621" anchor-label="methodDeclareClass" id="998791734%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="method-declare-class.html"><span>method</span><wbr></wbr><span>Declare</span><wbr></wbr><span><span>Class</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="998791734%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="method-declare-class.html"><span class="token function">methodDeclareClass</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">methodDeclareClass<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="method-declare-class.html">Builder.methodDeclareClass</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1415838985%2FFunctions%2F-360996621" anchor-label="methodDescriptor" id="-1415838985%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="method-descriptor.html"><span>method</span><wbr></wbr><span><span>Descriptor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1415838985%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="method-descriptor.html"><span class="token function">methodDescriptor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">methodDescriptor<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="method-descriptor.html">Builder.methodDescriptor</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1126306259%2FFunctions%2F-360996621" anchor-label="methodName" id="1126306259%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="method-name.html"><span>method</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1126306259%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="method-name.html"><span class="token function">methodName</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">methodName<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="method-name.html">Builder.methodName</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1419028283%2FFunctions%2F-360996621" anchor-label="methodParameterTypes" id="1419028283%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="method-parameter-types.html"><span>method</span><wbr></wbr><span>Parameter</span><wbr></wbr><span><span>Types</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1419028283%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="method-parameter-types.html"><span class="token function">methodParameterTypes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">methodParameterTypes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="method-parameter-types.html">Builder.methodParameterTypes</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-102913070%2FFunctions%2F-360996621" anchor-label="methodReturnType" id="-102913070%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="method-return-type.html"><span>method</span><wbr></wbr><span>Return</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-102913070%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="method-return-type.html"><span class="token function">methodReturnType</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">methodReturnType<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="method-return-type.html">Builder.methodReturnType</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1347945448%2FFunctions%2F-360996621" anchor-label="sourceFile" id="1347945448%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../-base-source-args/-builder/source-file.html"><span>source</span><wbr></wbr><span><span>File</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1347945448%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="../../-base-source-args/-builder/source-file.html"><span class="token function">sourceFile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">sourceFile<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="../../-base-source-args/-builder/source-file.html">Builder.sourceFile</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1477965839%2FFunctions%2F-360996621" anchor-label="unique" id="-1477965839%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="unique.html"><span><span>unique</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1477965839%2FFunctions%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="unique.html"><span class="token function">unique</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">unique<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">MethodInvokingArgs.Builder</a></div><div class="brief "><p class="paragraph"><a href="unique.html">Builder.unique</a></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="">Properties</h2>
+      <div class="table" data-togglable="Properties"><a data-name="-106052763%2FProperties%2F-360996621" anchor-label="beInvokedMethodDeclareClass" id="-106052763%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="be-invoked-method-declare-class.html"><span>be</span><wbr></wbr><span>Invoked</span><wbr></wbr><span>Method</span><wbr></wbr><span>Declare</span><wbr></wbr><span><span>Class</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-106052763%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="-106052763%2FProperties%2F-360996621" anchor-label="beInvokedMethodDeclareClass" id="-106052763%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="be-invoked-method-declare-class.html">beInvokedMethodDeclareClass</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><a data-name="-106052763%2FProperties%2F-360996621" anchor-label="beInvokedMethodDeclareClass" id="-106052763%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>be invoked method declare class</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2128904508%2FProperties%2F-360996621" anchor-label="beInvokedMethodDescriptor" id="-2128904508%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="be-invoked-method-descriptor.html"><span>be</span><wbr></wbr><span>Invoked</span><wbr></wbr><span>Method</span><wbr></wbr><span><span>Descriptor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2128904508%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="-2128904508%2FProperties%2F-360996621" anchor-label="beInvokedMethodDescriptor" id="-2128904508%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="be-invoked-method-descriptor.html">beInvokedMethodDescriptor</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><a data-name="-2128904508%2FProperties%2F-360996621" anchor-label="beInvokedMethodDescriptor" id="-2128904508%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>be invoked method descriptor</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1869367384%2FProperties%2F-360996621" anchor-label="beInvokedMethodName" id="-1869367384%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="be-invoked-method-name.html"><span>be</span><wbr></wbr><span>Invoked</span><wbr></wbr><span>Method</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1869367384%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="-1869367384%2FProperties%2F-360996621" anchor-label="beInvokedMethodName" id="-1869367384%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="be-invoked-method-name.html">beInvokedMethodName</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><a data-name="-1869367384%2FProperties%2F-360996621" anchor-label="beInvokedMethodName" id="-1869367384%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>be invoked method name</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1529589757%2FProperties%2F-360996621" anchor-label="beInvokedMethodParameterTypes" id="-1529589757%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="be-invoked-method-parameter-types.html"><span>be</span><wbr></wbr><span>Invoked</span><wbr></wbr><span>Method</span><wbr></wbr><span>Parameter</span><wbr></wbr><span><span>Types</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1529589757%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="-1529589757%2FProperties%2F-360996621" anchor-label="beInvokedMethodParameterTypes" id="-1529589757%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="be-invoked-method-parameter-types.html">beInvokedMethodParameterTypes</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</div><div class="brief "><a data-name="-1529589757%2FProperties%2F-360996621" anchor-label="beInvokedMethodParameterTypes" id="-1529589757%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>be invoked method parameter types</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-2043572727%2FProperties%2F-360996621" anchor-label="beInvokedMethodReturnType" id="-2043572727%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="be-invoked-method-return-type.html"><span>be</span><wbr></wbr><span>Invoked</span><wbr></wbr><span>Method</span><wbr></wbr><span>Return</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2043572727%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="-2043572727%2FProperties%2F-360996621" anchor-label="beInvokedMethodReturnType" id="-2043572727%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="be-invoked-method-return-type.html">beInvokedMethodReturnType</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><a data-name="-2043572727%2FProperties%2F-360996621" anchor-label="beInvokedMethodReturnType" id="-2043572727%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>be invoked method return type</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1000686987%2FProperties%2F-360996621" anchor-label="findPackage" id="-1000686987%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../-base-args/-builder/find-package.html"><span>find</span><wbr></wbr><span><span>Package</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1000686987%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="-1000686987%2FProperties%2F-360996621" anchor-label="findPackage" id="-1000686987%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-base-args/-builder/find-package.html">findPackage</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><a data-name="-1000686987%2FProperties%2F-360996621" anchor-label="findPackage" id="-1000686987%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>find package</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1748366%2FProperties%2F-360996621" anchor-label="methodDeclareClass" id="1748366%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="method-declare-class.html"><span>method</span><wbr></wbr><span>Declare</span><wbr></wbr><span><span>Class</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1748366%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="1748366%2FProperties%2F-360996621" anchor-label="methodDeclareClass" id="1748366%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="method-declare-class.html">methodDeclareClass</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><a data-name="1748366%2FProperties%2F-360996621" anchor-label="methodDeclareClass" id="1748366%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>method declare class</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-354492627%2FProperties%2F-360996621" anchor-label="methodDescriptor" id="-354492627%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="method-descriptor.html"><span>method</span><wbr></wbr><span><span>Descriptor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-354492627%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="-354492627%2FProperties%2F-360996621" anchor-label="methodDescriptor" id="-354492627%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="method-descriptor.html">methodDescriptor</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><a data-name="-354492627%2FProperties%2F-360996621" anchor-label="methodDescriptor" id="-354492627%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>method descriptor</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="1725815505%2FProperties%2F-360996621" anchor-label="methodName" id="1725815505%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="method-name.html"><span>method</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1725815505%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="1725815505%2FProperties%2F-360996621" anchor-label="methodName" id="1725815505%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="method-name.html">methodName</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><a data-name="1725815505%2FProperties%2F-360996621" anchor-label="methodName" id="1725815505%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>method name</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1011919892%2FProperties%2F-360996621" anchor-label="methodParameterTypes" id="-1011919892%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="method-parameter-types.html"><span>method</span><wbr></wbr><span>Parameter</span><wbr></wbr><span><span>Types</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1011919892%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="-1011919892%2FProperties%2F-360996621" anchor-label="methodParameterTypes" id="-1011919892%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="method-parameter-types.html">methodParameterTypes</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</div><div class="brief "><a data-name="-1011919892%2FProperties%2F-360996621" anchor-label="methodParameterTypes" id="-1011919892%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>method parameter types</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-269160846%2FProperties%2F-360996621" anchor-label="methodReturnType" id="-269160846%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="method-return-type.html"><span>method</span><wbr></wbr><span>Return</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-269160846%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="-269160846%2FProperties%2F-360996621" anchor-label="methodReturnType" id="-269160846%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="method-return-type.html">methodReturnType</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><a data-name="-269160846%2FProperties%2F-360996621" anchor-label="methodReturnType" id="-269160846%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>method return type</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="2136943260%2FProperties%2F-360996621" anchor-label="sourceFile" id="2136943260%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="../../-base-source-args/-builder/source-file.html"><span>source</span><wbr></wbr><span><span>File</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2136943260%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="2136943260%2FProperties%2F-360996621" anchor-label="sourceFile" id="2136943260%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../-base-source-args/-builder/source-file.html">sourceFile</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><a data-name="2136943260%2FProperties%2F-360996621" anchor-label="sourceFile" id="2136943260%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>source file name</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<a data-name="-1880130132%2FProperties%2F-360996621" anchor-label="unique" id="-1880130132%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+        <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+          <div class="main-subrow keyValue ">
+            <div class=""><span class="inline-flex">
+                <div><a href="unique.html"><span><span>unique</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1880130132%2FProperties%2F-360996621"></span>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
+            <div>
+              <div class="title">
+                <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><a data-name="-1880130132%2FProperties%2F-360996621" anchor-label="unique" id="-1880130132%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="unique.html">unique</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span></div><div class="brief "><a data-name="-1880130132%2FProperties%2F-360996621" anchor-label="unique" id="-1880130132%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a><p class="paragraph"><strong>unique result</strong></p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>findMethodUsingField</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>dexkit-android</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="dexkit-android::io.luckypray.dexkit/DexKitBridge/findMethodUsingField/#io.luckypray.dexkit.builder.MethodUsingFieldArgs/PointingToDeclaration//-360996621">
+  <div class="breadcrumbs"><a href="../../../index.html">dexkit-android</a><span class="delimiter">/</span><a href="../index.html">io.luckypray.dexkit</a><span class="delimiter">/</span><a href="index.html">DexKitBridge</a><span class="delimiter">/</span><span class="current">findMethodUsingField</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>find</span><wbr></wbr><span>Method</span><wbr></wbr><span>Using</span><wbr></wbr><span><span>Field</span></span></h1>
+  </div>
+  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="find-method-using-field.html"><span class="token function">findMethodUsingField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">args<span class="token operator">: </span><a href="../../io.luckypray.dexkit.builder/-method-using-field-args/index.html">MethodUsingFieldArgs</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../io.luckypray.dexkit.descriptor.member/-dex-method-descriptor/index.html">DexMethodDescriptor</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../io.luckypray.dexkit.descriptor.member/-dex-field-descriptor/index.html">DexFieldDescriptor</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><p class="paragraph">find method getting specified field.</p><p class="paragraph">test demo:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">package io.luckypray.dexkit.test;
+
+import android.util.Log;
+import java.lang.String;
+
+class A {
+    private String a = &quot;hello world&quot;;
+    void test() {
+        Log.d(&quot;Log&quot;, a);
+    }
+    void test1() {
+        test();
+        Log.d(&quot;Log&quot;, &quot;test1&quot;);
+    }
+}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">DexKit example:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">dexkit.findMethodUsingField {
+    fieldDeclareClass = &quot;io.luckypray.dexkit.test.A&quot;
+    fieldType = &quot;java.lang.String&quot;
+    usingType = FieldUsingType.GET
+    callerMethodReturnType = &quot;void&quot;
+}.forEach { (method, fields) ->
+    println(&quot;$method ->&quot;)
+    println(&quot;\t$fields&quot;)
+}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">output:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">Lio/luckypray/dexkit/test/A;->test()V ->
+    [Lio/luckypray/dexkit/test/A;->a:Ljava/lang/String;]</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><span class="kdoc-tag"><h4 class="">Return</h4><p class="paragraph">Aggregate according to caller</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">key: caller method descriptor
+value: list of field descriptor</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></span><span class="kdoc-tag"><h4 class="">Since</h4><p class="paragraph">1.1.0</p></span><h4 class="">Parameters</h4><div data-togglable="Parameters"><div class="table" data-togglable="Parameters"><div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><u><span><span>args</span></span></u></div></span></div><div><div class="title"><div data-togglable="Parameters"><p class="paragraph">search builder by <a href="../../io.luckypray.dexkit.builder/-method-using-field-args/index.html">MethodUsingFieldArgs</a></p></div></div></div></div></div></div></div><hr><div class="symbol monospace"><span class="token keyword">inline </span><span class="token keyword">fun </span><a href="find-method-using-field.html"><span class="token function">findMethodUsingField</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">builder<span class="token operator">: </span><span class="token keyword"></span><a href="../../io.luckypray.dexkit.builder/-method-using-field-args/-builder/index.html">MethodUsingFieldArgs.Builder</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../io.luckypray.dexkit.descriptor.member/-dex-method-descriptor/index.html">DexMethodDescriptor</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../io.luckypray.dexkit.descriptor.member/-dex-field-descriptor/index.html">DexFieldDescriptor</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><br><hr><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="find-method-using-field.html"><span class="token function"><strike>findMethodUsingField</strike></span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">fieldDescriptor<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">fieldDeclareClass<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter ">fieldName<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter ">fieldType<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter ">usedFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>FieldUsingType.ALL.toByteFlag()<span class="token punctuation">, </span></span><span class="parameter ">callerMethodDeclareClass<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter ">callerMethodName<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter ">callerMethodReturnType<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter ">callerMethodParamTypes<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">uniqueResult<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span><span class="token punctuation">, </span></span><span class="parameter ">dexPriority<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int-array/index.html">IntArray</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../io.luckypray.dexkit.descriptor.member/-dex-method-descriptor/index.html">DexMethodDescriptor</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../io.luckypray.dexkit.descriptor.member/-dex-field-descriptor/index.html">DexFieldDescriptor</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div><div class="deprecation-content"><h3 class="">Deprecated</h3><p class="paragraph">full-argument functions have been deprecated</p><h4 class="">Replace with</h4><div class="sample-container"><pre><code class="monospace block lang-kotlin" theme="idea">findMethodUsingField(MethodUsingFieldArgs)</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div><h4 class="">See also</h4><div data-togglable="See also"><div class="table" data-togglable="See also"><div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release"><div class="main-subrow keyValue WithExtraAttributes"><div class=""><span class="inline-flex"><div><a href="find-method-using-field.html"><span>Dex</span><wbr></wbr><span>Kit</span><wbr></wbr><span>Bridge.</span><wbr></wbr><span>find</span><wbr></wbr><span>Method</span><wbr></wbr><span>Using</span><wbr></wbr><span><span>Field</span></span></a></div></span></div><div></div></div></div></div></div></div></div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
