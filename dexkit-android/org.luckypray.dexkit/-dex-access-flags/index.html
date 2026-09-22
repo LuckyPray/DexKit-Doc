@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>DexAccessFlags</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            dexkit-android
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":dexkit-android:dokkaHtml/release">androidJvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="dexkit-android::org.luckypray.dexkit/DexAccessFlags///PointingToDeclaration//-360996621">
+  <div class="breadcrumbs"><a href="../../../index.html">dexkit-android</a><span class="delimiter">/</span><a href="../index.html">org.luckypray.dexkit</a><span class="delimiter">/</span><span class="current">DexAccessFlags</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Dex</span><wbr></wbr><span>Access</span><wbr></wbr><span><span>Flags</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">DexAccessFlags</a></div><p class="paragraph">Constants and helpers for raw DEX <code class="lang-kotlin">access_flags</code> values.</p><p class="paragraph">Use these with the <code class="lang-kotlin">accessFlags</code> result property or matcher condition for exact DEX semantics. The separate <code class="lang-kotlin">modifiers</code> property and condition follow Android Java reflection, including hidden Java bits such as <a href="-b-r-i-d-g-e.html">BRIDGE</a>, <a href="-v-a-r-a-r-g-s.html">VARARGS</a>, and <a href="-s-y-n-t-h-e-t-i-c.html">SYNTHETIC</a>. Use <a href="https://developer.android.com/reference/kotlin/java/lang/reflect/Modifier.html">java.lang.reflect.Modifier</a> for reflection conditions.</p><p class="paragraph"><a href="-c-o-n-s-t-r-u-c-t-o-r.html">CONSTRUCTOR</a> and <a href="-d-e-c-l-a-r-e-d_-s-y-n-c-h-r-o-n-i-z-e-d.html">DECLARED_SYNCHRONIZED</a> are DEX-only bits: inspect them through <code class="lang-kotlin">accessFlags</code>. The helpers only test bits and never normalize them. In raw DEX, <a href="-s-y-n-c-h-r-o-n-i-z-e-d.html">SYNCHRONIZED</a> is only valid for native methods; reflection maps <a href="-d-e-c-l-a-r-e-d_-s-y-n-c-h-r-o-n-i-z-e-d.html">DECLARED_SYNCHRONIZED</a> to <a href="-s-y-n-c-h-r-o-n-i-z-e-d.html">SYNCHRONIZED</a> instead.</p><p class="paragraph">Several bit positions depend on the target: <a href="-s-y-n-c-h-r-o-n-i-z-e-d.html">SYNCHRONIZED</a> and <a href="-s-u-p-e-r.html">SUPER</a> are both <code class="lang-kotlin">0x20</code>, <a href="-v-o-l-a-t-i-l-e.html">VOLATILE</a> and <a href="-b-r-i-d-g-e.html">BRIDGE</a> are both <code class="lang-kotlin">0x40</code>, and <a href="-t-r-a-n-s-i-e-n-t.html">TRANSIENT</a> and <a href="-v-a-r-a-r-g-s.html">VARARGS</a> are both <code class="lang-kotlin">0x80</code>. <a href="-s-u-p-e-r.html">SUPER</a> mirrors slicer's complete <code class="lang-kotlin">kAcc</code> set but is not used by a DEX <code class="lang-kotlin">class_def_item</code>. See <a href="https://source.android.com/docs/core/runtime/dex-format#access-flags">DEX access_flags</a>.</p><p class="paragraph">Java can access constants and helpers directly, for example:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">DexAccessFlags.isConstructor(methodData.getAccessFlags())
+DexAccessFlags.isBridge(methodData.getAccessFlags())</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">原始 DEX <code class="lang-kotlin">access_flags</code> 常量及辅助方法。</p><p class="paragraph">精确 DEX 语义请使用结果属性或匹配条件 <code class="lang-kotlin">accessFlags</code>；独立的 <code class="lang-kotlin">modifiers</code> 属性和条件遵循 Android Java 反射语义，保留 <a href="-b-r-i-d-g-e.html">BRIDGE</a>、<a href="-v-a-r-a-r-g-s.html">VARARGS</a>、<a href="-s-y-n-t-h-e-t-i-c.html">SYNTHETIC</a> 等隐藏 Java 标志位。 反射条件使用 <a href="https://developer.android.com/reference/kotlin/java/lang/reflect/Modifier.html">java.lang.reflect.Modifier</a>。</p><p class="paragraph"><a href="-c-o-n-s-t-r-u-c-t-o-r.html">CONSTRUCTOR</a>、<a href="-d-e-c-l-a-r-e-d_-s-y-n-c-h-r-o-n-i-z-e-d.html">DECLARED_SYNCHRONIZED</a> 是 DEX 专有标志，应通过 <code class="lang-kotlin">accessFlags</code> 读取。 本工具类只判断位值，不做归一化。原始 DEX 的 <a href="-s-y-n-c-h-r-o-n-i-z-e-d.html">SYNCHRONIZED</a> 仅适用于 native 方法； 反射语义则把 <a href="-d-e-c-l-a-r-e-d_-s-y-n-c-h-r-o-n-i-z-e-d.html">DECLARED_SYNCHRONIZED</a> 转换为 <a href="-s-y-n-c-h-r-o-n-i-z-e-d.html">SYNCHRONIZED</a>。</p><p class="paragraph">部分位值按目标类型复用：<a href="-s-y-n-c-h-r-o-n-i-z-e-d.html">SYNCHRONIZED</a> 与 <a href="-s-u-p-e-r.html">SUPER</a> 均为 <code class="lang-kotlin">0x20</code>，<a href="-v-o-l-a-t-i-l-e.html">VOLATILE</a> 与 <a href="-b-r-i-d-g-e.html">BRIDGE</a> 均为 <code class="lang-kotlin">0x40</code>，<a href="-t-r-a-n-s-i-e-n-t.html">TRANSIENT</a> 与 <a href="-v-a-r-a-r-g-s.html">VARARGS</a> 均为 <code class="lang-kotlin">0x80</code>。请选择适用于类、字段或方法的常量。 <a href="-s-u-p-e-r.html">SUPER</a> 仅用于对齐 slicer 的完整 <code class="lang-kotlin">kAcc</code> 集合，不用于 DEX <code class="lang-kotlin">class_def_item</code>。</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1139283570%2FProperties%2F-360996621" anchor-label="ABSTRACT" id="1139283570%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-b-s-t-r-a-c-t.html"><span><span>ABSTRACT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1139283570%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-b-s-t-r-a-c-t.html">ABSTRACT</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1024</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_ABSTRACT</code>: abstract class, method, or <code class="lang-kotlin">InnerClass</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1874104763%2FProperties%2F-360996621" anchor-label="ANNOTATION" id="-1874104763%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-a-n-n-o-t-a-t-i-o-n.html"><span><span>ANNOTATION</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1874104763%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-a-n-n-o-t-a-t-i-o-n.html">ANNOTATION</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">8192</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_ANNOTATION</code>: annotation class or <code class="lang-kotlin">InnerClass</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1151724203%2FProperties%2F-360996621" anchor-label="BRIDGE" id="1151724203%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-b-r-i-d-g-e.html"><span><span>BRIDGE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1151724203%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-b-r-i-d-g-e.html">BRIDGE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">64</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_BRIDGE</code>: compiler-generated bridge method.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="970505516%2FProperties%2F-360996621" anchor-label="CONSTRUCTOR" id="970505516%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-c-o-n-s-t-r-u-c-t-o-r.html"><span><span>CONSTRUCTOR</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="970505516%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-c-o-n-s-t-r-u-c-t-o-r.html">CONSTRUCTOR</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">65536</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_CONSTRUCTOR</code>: DEX-only class or instance initializer method.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1262455379%2FProperties%2F-360996621" anchor-label="DECLARED_SYNCHRONIZED" id="-1262455379%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-e-c-l-a-r-e-d_-s-y-n-c-h-r-o-n-i-z-e-d.html"><span><span>DECLARED_SYNCHRONIZED</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1262455379%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-d-e-c-l-a-r-e-d_-s-y-n-c-h-r-o-n-i-z-e-d.html">DECLARED_SYNCHRONIZED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">131072</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_DECLARED_SYNCHRONIZED</code>: DEX-only declared synchronized method.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-418236941%2FProperties%2F-360996621" anchor-label="ENUM" id="-418236941%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-e-n-u-m.html"><span><span>ENUM</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-418236941%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-e-n-u-m.html">ENUM</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">16384</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_ENUM</code>: enum class, enum field, or <code class="lang-kotlin">InnerClass</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-49463824%2FProperties%2F-360996621" anchor-label="FINAL" id="-49463824%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-f-i-n-a-l.html"><span><span>FINAL</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-49463824%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-f-i-n-a-l.html">FINAL</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">16</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_FINAL</code>: class, field, method, or <code class="lang-kotlin">InnerClass</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2107354893%2FProperties%2F-360996621" anchor-label="INTERFACE" id="2107354893%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-n-t-e-r-f-a-c-e.html"><span><span>INTERFACE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2107354893%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-i-n-t-e-r-f-a-c-e.html">INTERFACE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">512</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_INTERFACE</code>: interface class or <code class="lang-kotlin">InnerClass</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="173791709%2FProperties%2F-360996621" anchor-label="NATIVE" id="173791709%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-a-t-i-v-e.html"><span><span>NATIVE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="173791709%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-n-a-t-i-v-e.html">NATIVE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">256</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_NATIVE</code>: native method.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1770061891%2FProperties%2F-360996621" anchor-label="PRIVATE" id="1770061891%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-r-i-v-a-t-e.html"><span><span>PRIVATE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1770061891%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-p-r-i-v-a-t-e.html">PRIVATE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">2</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_PRIVATE</code>: field, method, or <code class="lang-kotlin">InnerClass</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2099473976%2FProperties%2F-360996621" anchor-label="PROTECTED" id="2099473976%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-r-o-t-e-c-t-e-d.html"><span><span>PROTECTED</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2099473976%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-p-r-o-t-e-c-t-e-d.html">PROTECTED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">4</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_PROTECTED</code>: field, method, or <code class="lang-kotlin">InnerClass</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1068455883%2FProperties%2F-360996621" anchor-label="PUBLIC" id="1068455883%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-p-u-b-l-i-c.html"><span><span>PUBLIC</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1068455883%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-p-u-b-l-i-c.html">PUBLIC</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">1</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_PUBLIC</code>: class, field, method, or <code class="lang-kotlin">InnerClass</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-621454490%2FProperties%2F-360996621" anchor-label="STATIC" id="-621454490%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-t-a-t-i-c.html"><span><span>STATIC</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-621454490%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-t-a-t-i-c.html">STATIC</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">8</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_STATIC</code>: field, method, or <code class="lang-kotlin">InnerClass</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="131094379%2FProperties%2F-360996621" anchor-label="STRICT" id="131094379%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-t-r-i-c-t.html"><span><span>STRICT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="131094379%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-t-r-i-c-t.html">STRICT</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">2048</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_STRICT</code>: strict floating-point method.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-946933877%2FProperties%2F-360996621" anchor-label="SUPER" id="-946933877%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-u-p-e-r.html"><span><span>SUPER</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-946933877%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-u-p-e-r.html">SUPER</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">32</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_SUPER</code>: class-file flag; not used by a DEX <code class="lang-kotlin">class_def_item</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1207269952%2FProperties%2F-360996621" anchor-label="SYNCHRONIZED" id="1207269952%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-y-n-c-h-r-o-n-i-z-e-d.html"><span><span>SYNCHRONIZED</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1207269952%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-y-n-c-h-r-o-n-i-z-e-d.html">SYNCHRONIZED</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">32</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_SYNCHRONIZED</code>: synchronized native method.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1430870657%2FProperties%2F-360996621" anchor-label="SYNTHETIC" id="1430870657%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-s-y-n-t-h-e-t-i-c.html"><span><span>SYNTHETIC</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1430870657%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-s-y-n-t-h-e-t-i-c.html">SYNTHETIC</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">4096</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_SYNTHETIC</code>: compiler-generated class, field, method, or <code class="lang-kotlin">InnerClass</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2012584228%2FProperties%2F-360996621" anchor-label="TRANSIENT" id="-2012584228%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-t-r-a-n-s-i-e-n-t.html"><span><span>TRANSIENT</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2012584228%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-t-r-a-n-s-i-e-n-t.html">TRANSIENT</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">128</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_TRANSIENT</code>: transient field.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="139963490%2FProperties%2F-360996621" anchor-label="VARARGS" id="139963490%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-v-a-r-a-r-g-s.html"><span><span>VARARGS</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="139963490%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-v-a-r-a-r-g-s.html">VARARGS</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">128</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_VARARGS</code>: variable-arity method.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1557838280%2FProperties%2F-360996621" anchor-label="VOLATILE" id="-1557838280%2FProperties%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-v-o-l-a-t-i-l-e.html"><span><span>VOLATILE</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1557838280%2FProperties%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">const </span><span class="token keyword">val </span><a href="-v-o-l-a-t-i-l-e.html">VOLATILE</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">64</span></div><div class="brief "><p class="paragraph"><code class="lang-kotlin">ACC_VOLATILE</code>: volatile field.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="743752774%2FFunctions%2F-360996621" anchor-label="isAbstract" id="743752774%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-abstract.html"><span>is</span><wbr></wbr><span><span>Abstract</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="743752774%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-abstract.html"><span class="token function">isAbstract</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-abstract.html">accessFlags</a> contains <a href="-a-b-s-t-r-a-c-t.html">ABSTRACT</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-857975079%2FFunctions%2F-360996621" anchor-label="isAnnotation" id="-857975079%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-annotation.html"><span>is</span><wbr></wbr><span><span>Annotation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-857975079%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-annotation.html"><span class="token function">isAnnotation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-annotation.html">accessFlags</a> contains <a href="-a-n-n-o-t-a-t-i-o-n.html">ANNOTATION</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="719855295%2FFunctions%2F-360996621" anchor-label="isBridge" id="719855295%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-bridge.html"><span>is</span><wbr></wbr><span><span>Bridge</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="719855295%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-bridge.html"><span class="token function">isBridge</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-bridge.html">accessFlags</a> contains <a href="-b-r-i-d-g-e.html">BRIDGE</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-528735948%2FFunctions%2F-360996621" anchor-label="isConstructor" id="-528735948%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-constructor.html"><span>is</span><wbr></wbr><span><span>Constructor</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-528735948%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-constructor.html"><span class="token function">isConstructor</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-constructor.html">accessFlags</a> contains <a href="-c-o-n-s-t-r-u-c-t-o-r.html">CONSTRUCTOR</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1174926598%2FFunctions%2F-360996621" anchor-label="isDeclaredSynchronized" id="-1174926598%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-declared-synchronized.html"><span>is</span><wbr></wbr><span>Declared</span><wbr></wbr><span><span>Synchronized</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1174926598%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-declared-synchronized.html"><span class="token function">isDeclaredSynchronized</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-declared-synchronized.html">accessFlags</a> contains <a href="-d-e-c-l-a-r-e-d_-s-y-n-c-h-r-o-n-i-z-e-d.html">DECLARED_SYNCHRONIZED</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-427292281%2FFunctions%2F-360996621" anchor-label="isEnum" id="-427292281%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-enum.html"><span>is</span><wbr></wbr><span><span>Enum</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-427292281%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-enum.html"><span class="token function">isEnum</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-enum.html">accessFlags</a> contains <a href="-e-n-u-m.html">ENUM</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2094079880%2FFunctions%2F-360996621" anchor-label="isFinal" id="-2094079880%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-final.html"><span>is</span><wbr></wbr><span><span>Final</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2094079880%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-final.html"><span class="token function">isFinal</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-final.html">accessFlags</a> contains <a href="-f-i-n-a-l.html">FINAL</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1895285845%2FFunctions%2F-360996621" anchor-label="isInterface" id="1895285845%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-interface.html"><span>is</span><wbr></wbr><span><span>Interface</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1895285845%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-interface.html"><span class="token function">isInterface</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-interface.html">accessFlags</a> contains <a href="-i-n-t-e-r-f-a-c-e.html">INTERFACE</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1444268175%2FFunctions%2F-360996621" anchor-label="isNative" id="-1444268175%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-native.html"><span>is</span><wbr></wbr><span><span>Native</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1444268175%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-native.html"><span class="token function">isNative</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-native.html">accessFlags</a> contains <a href="-n-a-t-i-v-e.html">NATIVE</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="815661195%2FFunctions%2F-360996621" anchor-label="isPrivate" id="815661195%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-private.html"><span>is</span><wbr></wbr><span><span>Private</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="815661195%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-private.html"><span class="token function">isPrivate</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-private.html">accessFlags</a> contains <a href="-p-r-i-v-a-t-e.html">PRIVATE</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1752774208%2FFunctions%2F-360996621" anchor-label="isProtected" id="-1752774208%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-protected.html"><span>is</span><wbr></wbr><span><span>Protected</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1752774208%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-protected.html"><span class="token function">isProtected</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-protected.html">accessFlags</a> contains <a href="-p-r-o-t-e-c-t-e-d.html">PROTECTED</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1419533345%2FFunctions%2F-360996621" anchor-label="isPublic" id="-1419533345%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-public.html"><span>is</span><wbr></wbr><span><span>Public</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1419533345%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-public.html"><span class="token function">isPublic</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-public.html">accessFlags</a> contains <a href="-p-u-b-l-i-c.html">PUBLIC</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1002054074%2FFunctions%2F-360996621" anchor-label="isStatic" id="1002054074%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-static.html"><span>is</span><wbr></wbr><span><span>Static</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1002054074%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-static.html"><span class="token function">isStatic</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-static.html">accessFlags</a> contains <a href="-s-t-a-t-i-c.html">STATIC</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1467901057%2FFunctions%2F-360996621" anchor-label="isStrict" id="-1467901057%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-strict.html"><span>is</span><wbr></wbr><span><span>Strict</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1467901057%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-strict.html"><span class="token function">isStrict</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-strict.html">accessFlags</a> contains <a href="-s-t-r-i-c-t.html">STRICT</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="645893203%2FFunctions%2F-360996621" anchor-label="isSuper" id="645893203%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-super.html"><span>is</span><wbr></wbr><span><span>Super</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="645893203%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-super.html"><span class="token function">isSuper</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-super.html">accessFlags</a> contains <a href="-s-u-p-e-r.html">SUPER</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-138024044%2FFunctions%2F-360996621" anchor-label="isSynchronized" id="-138024044%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-synchronized.html"><span>is</span><wbr></wbr><span><span>Synchronized</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-138024044%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-synchronized.html"><span class="token function">isSynchronized</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-synchronized.html">accessFlags</a> contains <a href="-s-y-n-c-h-r-o-n-i-z-e-d.html">SYNCHRONIZED</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1888702775%2FFunctions%2F-360996621" anchor-label="isSynthetic" id="-1888702775%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-synthetic.html"><span>is</span><wbr></wbr><span><span>Synthetic</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1888702775%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-synthetic.html"><span class="token function">isSynthetic</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-synthetic.html">accessFlags</a> contains <a href="-s-y-n-t-h-e-t-i-c.html">SYNTHETIC</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1432730268%2FFunctions%2F-360996621" anchor-label="isTransient" id="-1432730268%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-transient.html"><span>is</span><wbr></wbr><span><span>Transient</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1432730268%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-transient.html"><span class="token function">isTransient</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-transient.html">accessFlags</a> contains <a href="-t-r-a-n-s-i-e-n-t.html">TRANSIENT</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1268804042%2FFunctions%2F-360996621" anchor-label="isVarArgs" id="1268804042%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-var-args.html"><span>is</span><wbr></wbr><span>Var</span><wbr></wbr><span><span>Args</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1268804042%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-var-args.html"><span class="token function">isVarArgs</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-var-args.html">accessFlags</a> contains <a href="-v-a-r-a-r-g-s.html">VARARGS</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1996131188%2FFunctions%2F-360996621" anchor-label="isVolatile" id="-1996131188%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-volatile.html"><span>is</span><wbr></wbr><span><span>Volatile</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1996131188%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-volatile.html"><span class="token function">isVolatile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Returns whether <a href="is-volatile.html">accessFlags</a> contains <a href="-v-o-l-a-t-i-l-e.html">VOLATILE</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-258014538%2FFunctions%2F-360996621" anchor-label="toClassString" id="-258014538%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-class-string.html"><span>to</span><wbr></wbr><span>Class</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-258014538%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="to-class-string.html"><span class="token function">toClassString</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Returns a context-aware string for class access flags.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1524832908%2FFunctions%2F-360996621" anchor-label="toFieldString" id="-1524832908%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-field-string.html"><span>to</span><wbr></wbr><span>Field</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1524832908%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="to-field-string.html"><span class="token function">toFieldString</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Returns a context-aware string for field access flags.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1783897637%2FFunctions%2F-360996621" anchor-label="toMethodString" id="1783897637%2FFunctions%2F-360996621" data-filterable-set=":dexkit-android:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":dexkit-android:dokkaHtml/release" data-filterable-set=":dexkit-android:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-method-string.html"><span>to</span><wbr></wbr><span>Method</span><wbr></wbr><span><span>String</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1783897637%2FFunctions%2F-360996621"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dexkit-android:dokkaHtml/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-static/index.html"><span class="token annotation builtin">JvmStatic</span></a></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="to-method-string.html"><span class="token function">toMethodString</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accessFlags<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Returns a context-aware string for method access flags.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2026 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
